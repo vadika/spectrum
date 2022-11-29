@@ -7,7 +7,7 @@ pkgs.pkgsStatic.callPackage (
 
 { lib, stdenvNoCC, nixos, runCommand, writeReferencesToFile, s6-rc, tar2ext4
 , busybox, cloud-hypervisor, cryptsetup, execline, e2fsprogs, jq, kmod
-, mdevd, s6, s6-linux-init, socat, util-linuxMinimal, xorg
+, mdevd, s6, s6-linux-init, socat, util-linuxMinimal, xorg, waypipe
 }:
 
 let
@@ -49,7 +49,7 @@ let
 
   packages = [
     cloud-hypervisor e2fsprogs execline jq kmod mdevd s6 s6-linux-init s6-rc
-    socat start-vm
+    socat start-vm waypipe
 
     (cryptsetup.override {
       programs = {

@@ -39,6 +39,7 @@ FILES = \
 	usr/bin/lsvm \
 	usr/bin/vm-console \
 	usr/bin/vm-start \
+	usr/bin/vm-start-way \
 	usr/bin/vm-stop
 DIRS = dev etc/s6-linux-init/env ext run proc sys
 

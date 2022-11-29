@@ -59,6 +59,9 @@ let
       DRM_BOCHS = yes;
       DRM = yes;
       AGP = yes;
+      VSOCKETS = yes;
+      VIRTIO_VSOCKETS = yes;
+      VIRTIO_VSOCKETS_COMMON = yes;
     };
   };
 in

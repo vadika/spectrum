@@ -9,7 +9,7 @@ config.pkgs.pkgsStatic.callPackage (
 
 { lib, stdenvNoCC, runCommand, writeReferencesToFile, buildPackages
 , jq, s6-rc, tar2ext4, util-linux
-, busybox, cacert, execline, kmod, mdevd, s6, s6-linux-init
+, busybox, cacert, execline, kmod, mdevd, s6, s6-linux-init, tmux
 }:
 
 let
@@ -18,7 +18,7 @@ let
   scripts = import ../../scripts { inherit config; };
 
   packages = [
-    execline kmod mdevd s6 s6-linux-init s6-rc
+    execline kmod mdevd s6 s6-linux-init s6-rc tmux
 
     (busybox.override {
       extraConfig = ''

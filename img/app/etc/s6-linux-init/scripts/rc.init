@@ -7,5 +7,7 @@ if { s6-rc-init -c /etc/s6-rc /run/service }
 if { mkdir -p /dev/pts /dev/shm }
 if { modprobe overlay }
 if { mount -a }
+if { mkdir -p /run/home/user }
+if { chown  1000:1000 /run/home/user }
 
 s6-rc change ok-all

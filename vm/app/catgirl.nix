@@ -5,13 +5,22 @@
 
 import ../make-vm.nix { inherit config; } {
   providers.net = [ "netvm" ];
-  run = config.pkgs.pkgsStatic.callPackage (
+  
+  run-as-user = config.pkgs.pkgsStatic.callPackage (
     { writeScript, catgirl }:
     writeScript "run-catgirl" ''
       #!/bin/execlineb -P
       foreground { printf "IRC nick (to join #spectrum): " }
       backtick -E nick { head -1 }
       ${catgirl}/bin/catgirl -h irc.libera.chat -j "#spectrum" -n $nick
+    ''
+  ) { };
+
+  run = config.pkgs.pkgsStatic.callPackage (
+    { writeScript }:
+    writeScript "run-as-root" ''
+      #!/bin/execlineb -P
+      /bin/true
     ''
   ) { };
 }

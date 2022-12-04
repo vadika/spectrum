@@ -5,6 +5,7 @@
 export TERM foot
 export TERMINFO_DIRS /usr/share/terminfo
 export TMPDIR /run
+export TMUX_TMPDIR /run
 
 backtick USER { id -un }
 backtick HOME {
@@ -22,5 +23,5 @@ fdmove -c 2 0
 foreground { clear }
 unexport ?
 
-foreground { /run/ext/run }
-exec -l sh
+foreground { tmux new sh -c "/run/ext/run" }
+tmux new /bin/sh

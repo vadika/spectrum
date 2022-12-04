@@ -48,6 +48,7 @@ VM_FILES = \
 	etc/mdev.conf \
 	etc/mdev/iface \
 	etc/passwd \
+	etc/group \
 	etc/resolv.conf \
 	etc/s6-linux-init/scripts/rc.init
 VM_DIRS = dev run proc sys \
@@ -76,6 +77,8 @@ build/rootfs.tar: build/empty $(PACKAGES_TAR) $(VM_FILES) $(VM_BUILD_FILES)
 VM_S6_RC_FILES = \
 	etc/s6-rc/app/run \
 	etc/s6-rc/app/type \
+	etc/s6-rc/user-app/run \
+	etc/s6-rc/user-app/type \
 	etc/s6-rc/mdevd-coldplug/dependencies \
 	etc/s6-rc/mdevd-coldplug/type \
 	etc/s6-rc/mdevd-coldplug/up \

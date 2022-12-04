@@ -12,12 +12,13 @@ let
   appvm-catgirl = import ../../vm/app/catgirl.nix { inherit config; };
   appvm-lynx = import ../../vm/app/lynx.nix { inherit config; };
   appvm-hello-waypipe = import ../../vm/app/hello-waypipe.nix { inherit config; };
+  appvm-firefox = import ../../vm/app/firefox.nix { inherit config; };
 in
 
 runCommand "ext.ext4" {
   nativeBuildInputs = [ e2fsprogs ];
 } ''
-  mkdir -p root/svc/data/appvm-{catgirl,lynx,hello-waypipe}
+  mkdir -p root/svc/data/appvm-{catgirl,lynx,hello-waypipe,firefox}
   cd root
 
   tar -C ${netvm} -c data | tar -C svc -x
@@ -26,6 +27,7 @@ runCommand "ext.ext4" {
   tar -C ${appvm-catgirl} -c . | tar -C svc/data/appvm-catgirl -x
   tar -C ${appvm-lynx} -c . | tar -C svc/data/appvm-lynx -x
   tar -C ${appvm-hello-waypipe} -c . | tar -C svc/data/appvm-hello-waypipe -x
+  tar -C ${appvm-firefox} -c . | tar -C svc/data/appvm-firefox -x
 
   mkfs.ext4 -d . $out 16T
   resize2fs -M $out

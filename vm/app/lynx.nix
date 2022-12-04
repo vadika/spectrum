@@ -5,11 +5,21 @@
 
 import ../make-vm.nix { inherit config; } {
   providers.net = [ "netvm" ];
+
   run = config.pkgs.pkgsStatic.callPackage (
+   { writeScript }:
+    writeScript "run-root-shell" ''
+      #!/bin/execlineb -P
+      /bin/sh
+    ''
+  ) { };
+
+  run-as-user = config.pkgs.pkgsStatic.callPackage (
     { writeScript, lynx }:
     writeScript "run-lynx" ''
       #!/bin/execlineb -P
       ${lynx}/bin/lynx https://spectrum-os.org
     ''
   ) { };
+
 }

@@ -13,7 +13,7 @@ pkgs.pkgsStatic.callPackage (
 
 { lib, runCommand, writeReferencesToFile, e2fsprogs, tar2ext4 }:
 
-{ run, providers ? {} }:
+{ run, run-as-user, providers ? {} }:
 
 let
   inherit (lib)
@@ -34,9 +34,10 @@ runCommand "spectrum-vm" {
   mkdir root
   cd root
   ln -s ${run} run
-  comm -23 <(sort ${writeReferencesToFile run}) \
+  ln -s ${run-as-user} run-as-user
+  comm -23 <(sort ${writeReferencesToFile run} ${writeReferencesToFile run-as-user}) \
       <(sort ${writeReferencesToFile basePaths}) |
-      tar -cf ../run.tar --verbatim-files-from -T - run
+      tar -cf ../run.tar --verbatim-files-from -T - run run-as-user
   tar2ext4 -i ../run.tar -o "$out/blk/run.img"
   e2label "$out/blk/run.img" ext
 

@@ -6,7 +6,7 @@
 import ../make-vm.nix { inherit config; } {
   providers.net = [ "netvm" ];
   run = config.pkgs.callPackage (
-    { writeScript, waypipe, havoc, foot, hello-wayland, socat}:
+    { writeScript, waypipe, socat, weston, havoc }:
     writeScript "run-waypipe-app" ''
       #!/bin/sh
       mkdir /run/0
@@ -16,8 +16,14 @@ import ../make-vm.nix { inherit config; } {
       ${waypipe}/bin/waypipe --display wayland-local --socket /run/waypipe.sock server -- sleep inf &
       export WAYLAND_DISPLAY=wayland-local
       ${havoc}/bin/havoc
-      ${hello-wayland}/bin/hello-wayland
-      ${foot}/bin/foot
+    ''
+  ) { };
+
+    run-as-user = config.pkgs.pkgsStatic.callPackage (
+    { writeScript, socat, waypipe, havoc, firefox-wayland}:
+    writeScript "run-as-user" ''
+      #!/bin/sh
+      /bin/sh
     ''
   ) { };
 }

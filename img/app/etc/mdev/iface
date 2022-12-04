@@ -33,4 +33,7 @@ foreground {
   }
 }
 
-s6-rc -u change app
+# fix permissions
+foreground { chmod a+rw /dev/null }
+
+s6-rc -u change app user-app

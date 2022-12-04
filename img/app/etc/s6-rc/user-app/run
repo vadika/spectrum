@@ -1,0 +1,19 @@
+#!/bin/sh 
+# SPDX-License-Identifier: EUPL-1.2+
+
+export TERM=foot
+export TERMINFO_DIRS=/usr/share/terminfo
+export TMPDIR=/run
+export USER=user
+export TMUX_TMPDIR=/run
+export HOME=/run/home/${USER}
+
+cd $HOME
+
+while ! test -S '/run/tmux-0/default'; do sleep 1; echo waiting for tmux ; done
+sleep 5
+
+echo "starting user service"
+tmux neww su user sh -c "/run/ext/run-as-user" 
+tmux neww su user /bin/sh
+sleep inf

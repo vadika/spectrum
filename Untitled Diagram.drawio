@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2023-04-03T10:36:34.156Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0" etag="dQ0ism5obe6Q8fkUAV5J" version="21.1.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-03T10:38:56.238Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0" etag="fhotzUIIMgdrsU5oD04M" version="21.1.4" type="github">
   <diagram name="Page-1" id="Gnur41sGLRwA_66FkKds">
     <mxGraphModel dx="1049" dy="1443" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="UpkKUZ4XRNEf7WIkUE3t-2" value="Host Userspace" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="110" y="740" width="346.92" height="110" as="geometry" />
+          <mxGeometry x="103.08" y="620" width="346.92" height="110" as="geometry" />
         </mxCell>
         <mxCell id="UpkKUZ4XRNEf7WIkUE3t-3" value="Guest Kernel" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="110" y="440" width="346.92" height="110" as="geometry" />
@@ -14,13 +14,16 @@
           <mxGeometry x="110" y="240" width="340" height="107.8" as="geometry" />
         </mxCell>
         <mxCell id="UpkKUZ4XRNEf7WIkUE3t-6" value="&lt;div&gt;Host Kernel&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="110" y="1030" width="346.92" height="110" as="geometry" />
+          <mxGeometry x="106.54" y="780" width="346.92" height="110" as="geometry" />
         </mxCell>
         <mxCell id="UpkKUZ4XRNEf7WIkUE3t-7" value="Host Hardware" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="530" y="1030" width="346.92" height="110" as="geometry" />
+          <mxGeometry x="520" y="780" width="346.92" height="110" as="geometry" />
         </mxCell>
         <mxCell id="UpkKUZ4XRNEf7WIkUE3t-8" value="Guest hardware" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="503" y="440" width="346.92" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="UpkKUZ4XRNEf7WIkUE3t-11" value="QEMU VMM" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="190" width="780" height="380" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

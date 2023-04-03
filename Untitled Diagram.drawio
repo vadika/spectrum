@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-04-03T10:38:56.238Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0" etag="fhotzUIIMgdrsU5oD04M" version="21.1.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-03T10:41:40.868Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0" etag="3zNEEAlUrlSKWEIGtixe" version="21.1.4" type="github">
   <diagram name="Page-1" id="Gnur41sGLRwA_66FkKds">
     <mxGraphModel dx="1049" dy="1443" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -24,6 +24,21 @@
         </mxCell>
         <mxCell id="UpkKUZ4XRNEf7WIkUE3t-11" value="QEMU VMM" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="90" y="190" width="780" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="UpkKUZ4XRNEf7WIkUE3t-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="UpkKUZ4XRNEf7WIkUE3t-14" target="UpkKUZ4XRNEf7WIkUE3t-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UpkKUZ4XRNEf7WIkUE3t-14" value="BPMP driver" style="shape=ext;double=1;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="355" y="800" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="UpkKUZ4XRNEf7WIkUE3t-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="UpkKUZ4XRNEf7WIkUE3t-15" target="UpkKUZ4XRNEf7WIkUE3t-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UpkKUZ4XRNEf7WIkUE3t-15" value="BPMP host proxy" style="shape=ext;double=1;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="802.5" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UpkKUZ4XRNEf7WIkUE3t-16" value="BPMP hw" style="shape=ext;double=1;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="797.5" width="70" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
